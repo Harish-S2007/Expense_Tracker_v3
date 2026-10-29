@@ -34,7 +34,7 @@ pipeline {
                         throw "Kubectl is not available."
                     }
 
-                    python --version
+                    & $env:PYTHON --version
                     if ($LASTEXITCODE -ne 0) {
                         throw "Python is not available."
                     }
@@ -47,7 +47,7 @@ pipeline {
                 powershell '''
                     $ErrorActionPreference = "Stop"
 
-                    python -m pip install -r requirements.txt
+                    & $env:PYTHON -m pip install -r requirements.txt
                     if ($LASTEXITCODE -ne 0) {
                         throw "Dependency installation failed."
                     }
@@ -60,7 +60,7 @@ pipeline {
                 powershell '''
                     $ErrorActionPreference = "Stop"
 
-                    python -c "import app; print('V3 application imported successfully')"
+                    & $env:PYTHON -c "import app; print('V3 application imported successfully')"
                     if ($LASTEXITCODE -ne 0) {
                         throw "Application test failed."
                     }
