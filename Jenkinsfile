@@ -3,6 +3,7 @@ pipeline {
     agent any
 
     environment {
+        PYTHON = 'C:\\Users\\hp\\expense_tracker_v3\\.venv\\Scripts\\python.exe'
         DOCKER = 'C:\\Users\\hp\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe'
         KUBECTL = 'C:\\Users\\hp\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\kubectl.exe'
         KUBECONFIG = 'C:\\Users\\hp\\.kube\\config'
